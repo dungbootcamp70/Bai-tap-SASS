@@ -1,0 +1,110 @@
+@import './base/base';
+@import './variable/variable.scss';
+
+//Biến css --ten_bien
+body{
+    --color:#{$dark}; //chữ đen nền xanh
+    --bg: #{$white};
+    
+}
+.header {
+    background-image: url(../images/yellow_top_wave_01.png);
+    background-size: 114%;
+    background-repeat: no-repeat;
+    background-position: 0px -30px;
+    z-index: 1;
+    font-family: "Montserrat", sans-serif;
+    .container {
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        @include mText($text-base,$fw-semi,$dark);
+        .logo {
+            img {height: 80px;}
+        }
+                }
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            @include mButton($text-base, $fw-semi, $white, $primary, 10px 15px, 2px solid #2a73dd, 50px, $white, $primary);
+                }
+        .main_menu{
+            // box-shadow: 0 3px 6px #c9d8f4;
+            a{
+                display: inline;
+                color: black;
+                margin-right: 45px;
+                // text-decoration: none;
+            }       
+                 }
+        .icon {
+            a{margin-left: 10px;
+                @include mText($text-base,$fw-semi,$dark);
+            }
+        }
+    }
+}
+.about{
+    .container{
+        .content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .info{
+                align-items: center;
+                justify-content: start;
+                p{@include mText($text-2xl,$fw-normal,$primary)}
+                h2{@include mText($text-6xl,$fw-bold,$dark)}
+            }
+            .picture{
+               height: 580px; 
+            }
+        }
+    }
+}
+.information{
+    .container{
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: center;
+        display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Adjust the gap as needed */
+    text-align: center;
+        .card{
+            border-radius: 100px;
+            height: 362px;         
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+            .detail {
+                padding: 10px;
+                
+           h6{@include mText($text-base,$fw-normal,$primary);}
+           h2{@include mText($text-3xl,$fw-bold,$dark);
+            padding: 20px;
+        }
+            }
+        }
+    }
+}
+
+.find{
+    .container{
+        display: flex;
+        .input{
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 20px; /* Adjust the gap as needed */
+            text-align: center;
+        }
+    }
+}
