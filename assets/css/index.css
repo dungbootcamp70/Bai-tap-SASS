@@ -362,7 +362,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -377,18 +377,17 @@ a {
 a.active {
   font-size: 20px;
   font-weight: 400;
-  color: #b21980 !important;
   text-decoration: none;
 }
 a.active::after {
   content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 42%;
+  background: #b21980;
   position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  transform: scale(1, 1) !important;
+  bottom: 0;
+  left: 50%;
 }
 
 .m-0 {
@@ -752,16 +751,15 @@ a.active::after {
 }
 
 body {
-  --color:#000;
+  --color: #000;
   --bg: #fff;
 }
 
 .header {
-  background-image: url(../images/yellow_top_wave_01.png);
-  background-size: 114%;
-  background-repeat: no-repeat;
-  background-position: 0px -30px;
-  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   font-family: "Montserrat", sans-serif;
 }
 .header .container {
@@ -800,6 +798,13 @@ body {
   display: inline;
   color: black;
   margin-right: 45px;
+  padding: 15px 0 !important;
+}
+.header .menu .main_menu a::after {
+  bottom: -4px;
+}
+.header .menu .main_menu a:hover::after {
+  bottom: -4px !important;
 }
 .header .menu .icon a {
   margin-left: 10px;
@@ -808,6 +813,12 @@ body {
   color: #000;
 }
 
+.about {
+  background-image: url("../images/yellow_top_wave_01.png"), url("../images/Violet_top_left_wave.png");
+  background-position: left top, right bottom;
+  background-size: contain;
+  background-repeat: no-repeat, no-repeat;
+}
 .about .container .content {
   display: flex;
   justify-content: space-between;
@@ -831,17 +842,28 @@ body {
   height: 580px;
 }
 
+.information {
+  background: #dcd1f0;
+  background-image: url("../images/Wave_White_bottom_right_shape_01.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .information .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px; /* Adjust the gap as needed */
+  gap: 20px;
   text-align: center;
+  margin-bottom: 100px;
 }
 .information .container .card {
-  border-radius: 100px;
+  border-radius: 20px;
   height: 362px;
+  background-color: #fff;
 }
 .information .container .card img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   max-width: 100%;
   height: auto;
 }
@@ -860,12 +882,142 @@ body {
   padding: 20px;
 }
 
+.find {
+  background: url("../images/accent_bottom_wave_01.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  padding: 50px 0;
+}
 .find .container {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.find .container .input {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 20px; /* Adjust the gap as needed */
-  text-align: center;
+.find .container img {
+  width: 80%;
+}
+.find .container .content {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%;
+}
+.find .container .content h2 {
+  margin-bottom: 50px;
+}
+.find .container .content .input {
+  margin: 5px;
+  width: 100%;
+  border: none;
+}
+.find .container .content .input-container {
+  border: solid 1px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.find .container .content .message {
+  height: 80px;
+}
+.find .container .content .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.find .container .content .row .input-row {
+  border: solid 1px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.find .container .content .text {
+  height: 100px;
+}
+.find .container .content button {
+  width: 150px;
+  font-size: 14px;
+  font-weight: 550;
+  color: #fff;
+  background: #b21980;
+  padding: 10px 15px;
+  border-radius: 50px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.find .container .content button:hover {
+  animation: scale(1.5);
+  color: #b21980;
+  background: #fff;
+}
+
+footer {
+  padding-top: 100px;
+  height: 500px;
+  color: white;
+  background-image: url("../images/footer_background.jpg");
+  background-position: bottom center;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+footer .container .address {
+  display: flex;
+}
+footer .container .address i {
+  padding: 10px;
+}
+footer .container .address span {
+  padding: 10px;
+}
+footer .container a {
+  color: #fff;
+}
+footer .container .list {
+  display: flex;
+  flex-direction: column;
+}
+footer .container .list .footer-link {
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 10px;
+  margin-top: 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+footer .container .list .footer-link:hover {
+  color: gray;
+}
+footer .container .list .footer-link svg {
+  margin-right: 5px;
+}
+footer .container p {
+  padding: 50px;
+}
+footer .container button {
+  width: 150px;
+  font-size: 14px;
+  font-weight: 550;
+  color: grey;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 50px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+footer .container button:hover {
+  animation: scale(1.5);
+  color: #fff;
+  background: #b21980;
 }/*# sourceMappingURL=index.css.map */

@@ -1,5 +1,6 @@
 // Màu sắc của web
 $primary: #b21980;
+$secondary: #dcd1f0;
 $dark: #000;
 $white: #fff;
 //sizing: (font size)
@@ -54,7 +55,6 @@ $p-9: 2.25rem;
     @include mText($fz, $fw , $c );
     background: $bg;
     padding: $p;
-    // border: $bd;
     border-radius: $br;
     transition: all .3s;
     cursor: pointer;
